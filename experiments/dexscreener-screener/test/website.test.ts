@@ -9,7 +9,9 @@ beforeAll(async () => {
   server = createServer((req, res) => {
     if (req.url === "/") {
       res.writeHead(200, { "content-type": "text/html" });
-      res.end("<html><title>Acme</title><body><h1>Acme protocol docs and app</h1></body></html>");
+      res.end(
+        "<html><title>Acme</title><body><h1>Acme</h1><p>Protocol docs, app download, and token info.</p></body></html>",
+      );
       return;
     }
     if (req.url === "/park") {

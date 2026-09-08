@@ -4,7 +4,11 @@ const statusEl = document.getElementById("status");
 const scanBtn = document.getElementById("scan");
 const tabs = document.querySelectorAll(".tabs button");
 
-let category = "should_check";
+const initialCategory = new URLSearchParams(location.search).get("category");
+let category = initialCategory === null ? "should_check" : initialCategory;
+tabs.forEach((tab) => {
+  tab.classList.toggle("active", tab.dataset.category === category);
+});
 
 const money = (value) => {
   if (value == null || Number.isNaN(Number(value))) return "—";
@@ -116,6 +120,10 @@ tabs.forEach((tab) => {
     tabs.forEach((item) => item.classList.remove("active"));
     tab.classList.add("active");
     category = tab.dataset.category;
+    const url = new URL(location.href);
+    if (category) url.searchParams.set("category", category);
+    else url.searchParams.delete("category");
+    history.replaceState(null, "", url);
     await loadProjects();
   });
 });

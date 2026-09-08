@@ -17,6 +17,11 @@ describe("domain helpers", () => {
     expect(sameRegistrableDomain("https://token.xyz", "https://unrelated.com")).toBe(false);
   });
 
+  it("treats loopback IPs as the same host", () => {
+    expect(sameRegistrableDomain("http://127.0.0.1:3780/", "http://127.0.0.1:3780/ok")).toBe(true);
+    expect(sameRegistrableDomain("http://127.0.0.1:3780/", "https://unrelated.com")).toBe(false);
+  });
+
   it("flags common shorteners", () => {
     expect(isShortener("https://bit.ly/abc")).toBe(true);
     expect(isShortener("https://realproject.xyz")).toBe(false);

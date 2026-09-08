@@ -41,7 +41,10 @@ export function isShortener(url: string): boolean {
 export function sameRegistrableDomain(a: string, b: string): boolean {
   const left = registrableDomain(a);
   const right = registrableDomain(b);
-  return Boolean(left && right && left === right);
+  if (left && right) return left === right;
+  const hostA = hostOf(a);
+  const hostB = hostOf(b);
+  return Boolean(hostA && hostB && hostA === hostB);
 }
 
 export function normalizeHttpUrl(raw: string): string | null {

@@ -151,7 +151,8 @@ export async function checkWebsite(url: string | null): Promise<WebsiteCheck> {
     return { url, outcome: "parked", hops: fetched.hops, finalUrl: fetched.finalUrl, title, flags };
   }
 
-  if (body.replace(/<[^>]+>/g, "").trim().length < 40) {
+  const text = body.replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+  if (text.length < 20 && !title) {
     flags.push({ code: "website_empty", severity: "fail", message: "Website body is empty or nearly empty." });
     return { url, outcome: "empty", hops: fetched.hops, finalUrl: fetched.finalUrl, title, flags };
   }
