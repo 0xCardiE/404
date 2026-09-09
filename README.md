@@ -26,3 +26,10 @@ Update the simulation parameters: tokenA (your token address), tokenB (typically
 Run Simulate, and then expand the Input/Output section. The output on the right column will show the derived pool address.
 
 Also check this https://github.com/Pandora-Labs-Org/erc404?tab=readme-ov-file
+
+## Experiments
+
+See [`experiments/`](./experiments) for local tools that sit next to the contracts.
+
+- [`experiments/dexscreener-screener`](./experiments/dexscreener-screener) — DexScreener agent that finds sub-$3M tokens and checks website, Twitter, liquidity, and paid promo
+

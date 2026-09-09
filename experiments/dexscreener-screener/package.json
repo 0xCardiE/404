@@ -1,0 +1,29 @@
+{
+  "name": "dexscreener-screener",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local DexScreener discovery agent for sub-$3M tokens with website, Twitter, liquidity, and promo checks.",
+  "scripts": {
+    "scan": "tsx src/cli.ts scan",
+    "watch": "tsx src/cli.ts watch",
+    "dashboard": "tsx src/cli.ts dashboard",
+    "start": "tsx src/cli.ts watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "tldts": "^6.1.86"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.18.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

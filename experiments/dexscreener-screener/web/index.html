@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DexScreener experiment</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div>
+        <p class="eyebrow">experiments / dexscreener-screener</p>
+        <h1>Sub-$3M project desk</h1>
+        <p class="lede">
+          Latest DexScreener profiles, boosts, and ads — filtered under $3M market cap, then checked for a real
+          website, a live X account, liquidity, and paid promo.
+        </p>
+      </div>
+      <div class="actions">
+        <button id="scan" type="button">Run scan</button>
+        <p id="status" class="status">Loading…</p>
+      </div>
+    </header>
+
+    <section class="stats" id="stats"></section>
+
+    <nav class="tabs" aria-label="Categories">
+      <button type="button" data-category="should_check" class="active">Should check</button>
+      <button type="button" data-category="watch">Watch</button>
+      <button type="button" data-category="not_worthy">Not worthy</button>
+      <button type="button" data-category="">All</button>
+    </nav>
+
+    <main id="grid" class="grid"></main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
