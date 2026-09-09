@@ -1,6 +1,6 @@
 # DexScreener screener
 
-Local TypeScript agent that polls DexScreener every five minutes, keeps tokens under $1M market cap, and checks whether they look worth a human follow-up.
+Local TypeScript agent that polls DexScreener every five minutes, keeps tokens under $3M market cap, and checks whether they look worth a human follow-up.
 
 This does **not** prove a token is safe. Paid DexScreener boosts and ads are marketing. The agent only filters obvious junk: dead or redirected sites, broken X accounts, and no liquidity.
 
@@ -11,7 +11,7 @@ This does **not** prove a token is safe. Paid DexScreener boosts and ads are mar
    - latest boosts
    - latest ads
 2. **Market data** via `/tokens/v1/{chain}/{addresses}`
-   - market cap under `$1,000,000` (override with `MAX_MARKET_CAP_USD`)
+   - market cap under `$3,000,000` (override with `MAX_MARKET_CAP_USD`)
    - pair age under 21 days (`MAX_PAIR_AGE_DAYS`)
    - liquidity present (`MIN_LIQUIDITY_USD`, default `$10,000`)
 3. **Paid promo** via `/orders/v1/{chain}/{token}` plus the discovery feeds
@@ -32,7 +32,7 @@ Rejected tokens are stored as `not_worthy` and skipped on later scans.
 
 | Category | Meaning |
 | --- | --- |
-| `should_check` | Live site, usable X signal, liquidity, under $1M. Open the card and do real diligence. |
+| `should_check` | Live site, usable X signal, liquidity, under $3M. Open the card and do real diligence. |
 | `watch` | Something useful is there, but a signal is missing or thin. |
 | `not_worthy` | Dead site, fake/missing socials, or no liquidity. Do not fetch again. |
 
@@ -59,7 +59,7 @@ Environment knobs:
 
 | Variable | Default | Role |
 | --- | --- | --- |
-| `MAX_MARKET_CAP_USD` | `1000000` | Upper market-cap filter |
+| `MAX_MARKET_CAP_USD` | `3000000` | Upper market-cap filter |
 | `MIN_LIQUIDITY_USD` | `10000` | Liquidity floor for `should_check` |
 | `MAX_PAIR_AGE_DAYS` | `21` | Ignore older pairs |
 | `SCAN_INTERVAL_MS` | `300000` | Watch-loop interval |
@@ -72,4 +72,4 @@ State lives in `data/projects.json` (gitignored). Override a card from the UI if
 
 [DexScreener API reference](https://docs.dexscreener.com/api/reference)
 
-DexScreener does not publish a dedicated “upcoming launch” feed. This experiment treats newly paid profiles, boosts, and ads as the new-project queue, then keeps those still under $1M.
+DexScreener does not publish a dedicated “upcoming launch” feed. This experiment treats newly paid profiles, boosts, and ads as the new-project queue, then keeps those still under $3M.

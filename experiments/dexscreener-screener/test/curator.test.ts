@@ -30,7 +30,7 @@ function input(overrides: Partial<CuratorInput> = {}): CuratorInput {
     promo: { hasProfile: true, hasBoost: true, hasAd: false, paidOrders: [] },
     websites: ["https://acme.xyz"],
     socials: [{ platform: "twitter", url: "https://x.com/acme" }],
-    maxMarketCapUsd: 1_000_000,
+    maxMarketCapUsd: 3_000_000,
     minLiquidityUsd: 10_000,
     ...overrides,
   };

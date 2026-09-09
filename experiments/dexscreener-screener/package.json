@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Local DexScreener discovery agent for sub-$1M tokens with website, Twitter, liquidity, and promo checks.",
+  "description": "Local DexScreener discovery agent for sub-$3M tokens with website, Twitter, liquidity, and promo checks.",
   "scripts": {
     "scan": "tsx src/cli.ts scan",
     "watch": "tsx src/cli.ts watch",

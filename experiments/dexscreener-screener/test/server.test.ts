@@ -20,10 +20,10 @@ describe("dashboard API", () => {
       maxMarketCapUsd: number;
     };
     expect(health.ok).toBe(true);
-    expect(health.maxMarketCapUsd).toBe(1_000_000);
+    expect(health.maxMarketCapUsd).toBe(3_000_000);
 
     const page = await fetch(`${base}/`).then((res) => res.text());
-    expect(page).toContain("Sub-$1M project desk");
+    expect(page).toContain("Sub-$3M project desk");
 
     const projects = (await fetch(`${base}/api/projects?category=should_check`).then((res) => res.json())) as {
       projects: unknown[];

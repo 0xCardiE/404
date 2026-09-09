@@ -31,5 +31,5 @@ Also check this https://github.com/Pandora-Labs-Org/erc404?tab=readme-ov-file
 
 See [`experiments/`](./experiments) for local tools that sit next to the contracts.
 
-- [`experiments/dexscreener-screener`](./experiments/dexscreener-screener) — DexScreener agent that finds sub-$1M tokens and checks website, Twitter, liquidity, and paid promo
+- [`experiments/dexscreener-screener`](./experiments/dexscreener-screener) — DexScreener agent that finds sub-$3M tokens and checks website, Twitter, liquidity, and paid promo
 

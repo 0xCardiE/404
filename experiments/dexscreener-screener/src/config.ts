@@ -11,7 +11,7 @@ function envNumber(name: string, fallback: number): number {
 }
 
 export const config = {
-  maxMarketCapUsd: envNumber("MAX_MARKET_CAP_USD", 1_000_000),
+  maxMarketCapUsd: envNumber("MAX_MARKET_CAP_USD", 3_000_000),
   minMarketCapUsd: envNumber("MIN_MARKET_CAP_USD", 0),
   minLiquidityUsd: envNumber("MIN_LIQUIDITY_USD", 10_000),
   maxPairAgeDays: envNumber("MAX_PAIR_AGE_DAYS", 21),
